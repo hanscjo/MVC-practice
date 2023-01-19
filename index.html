@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tittel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div id="app"></div>
+    
+    <script>
+        //model
+        var word1 = '';
+        var word2 = '';
+        var word3 = '';
+        var word4 = '';
+        var word5 = '';
+        
+        //view
+        view();
+        function view() { /*HTML*/ //<-- dersom du ønsker å få innerHTML stringen til å se ut som HTML
+            document.getElementById("app").innerHTML = /*HTML*/`
+            <h1>Velkommen!</h1>
+            <p>Det var en gang en <b>${word1}</b> som likte å <b>${word2} ${word3}</b>. Da ble en <b>${word4}</b> veldig <b>${word5}</b></p>
+            <div id="choices">
+                <div id="choices1">
+                    <button class="1" onclick=selectWord(this)>Katt</button>
+                    <button class="1" onclick=selectWord(this)>Person</button>
+                    <button class="1" onclick=selectWord(this)>Hund</button>
+                </div>
+                <div id="choices2">
+                    <button class="2" onclick=selectWord(this)>Spise</button>
+                    <button class="2" onclick=selectWord(this)>Lage</button>
+                    <button class="2" onclick=selectWord(this)>Koke</button>
+                </div> 
+                <div id="choices3">
+                    <button class="3" onclick=selectWord(this)>Biff</button>
+                    <button class="3" onclick=selectWord(this)>Sushi</button>
+                    <button class="3" onclick=selectWord(this)>Nøttestek</button>
+                </div> 
+                <div id="choices4">
+                    <button class="4" onclick=selectWord(this)>Katt</button>
+                    <button class="4" onclick=selectWord(this)>Fugl</button>
+                    <button class="4" onclick=selectWord(this)>Hund</button>
+                </div> 
+                <div id="choices5">
+                    <button class="5" onclick=selectWord(this)>Glad</button>
+                    <button class="5" onclick=selectWord(this)>Lei seg</button>
+                    <button class="5" onclick=selectWord(this)>Nysgjerrig</button>
+                </div> 
+            </div>
+            `;
+        }
+
+        //controller
+        function selectWord(choice) {
+            let wordClass = choice.className;
+            switch (wordClass) {
+                case "1":
+                    word1 = choice.innerHTML.toLowerCase();
+                    break;
+                case "2":
+                    word2 = choice.innerHTML.toLowerCase();
+                    break;
+                case "3":
+                    word3 = choice.innerHTML.toLowerCase();
+                    break;
+                case "4": 
+                    word4 = choice.innerHTML.toLowerCase();
+                    break;
+                case "5": 
+                    word5 = choice.innerHTML.toLowerCase();
+            }
+            view();
+        }
+
+    </script>
+</body>    
+</html>
