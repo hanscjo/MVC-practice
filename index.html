@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adjektivhistorie!</title>
+    <title>Tittel</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -61,22 +61,23 @@
 
         //controller
         function selectWord(choice) {
+            let selectedWord = choice.innerHTML.toLowerCase();
             let wordClass = choice.className;
             switch (wordClass) {
                 case "1":
-                    word1 = choice.innerHTML.toLowerCase();
+                    word1 = selectedWord;
                     break;
                 case "2":
-                    word2 = choice.innerHTML.toLowerCase();
+                    word2 = selectedWord;
                     break;
                 case "3":
-                    word3 = choice.innerHTML.toLowerCase();
+                    word3 = selectedWord;
                     break;
                 case "4": 
-                    word4 = choice.innerHTML.toLowerCase();
+                    word4 = selectedWord;
                     break;
                 case "5": 
-                    word5 = choice.innerHTML.toLowerCase() + '</b>.';
+                    word5 = selectedWord;
             }
             view();
         }
